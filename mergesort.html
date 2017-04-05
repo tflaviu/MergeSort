@@ -2,6 +2,7 @@
 	<head>
 	</head>
 	<body>
+		<p id='sort-array'></p>
 		<script>
 			function binarySearch(arr, nr) {
 			  setTimeout(function() {
@@ -36,6 +37,13 @@
 				}
 			  }, 1000);
 			}
+			
+			arr = [10, 7, 100, 45, 200, 222, 110, 300, 400, 250, 524, 534, 6566, 35553, 9];
+			arr = arr.sort(function(a, b) {
+			  return a - b;
+			});
+
+			var result = binarySearch(arr, 7);
 		</script>
 	</body>
 </html>
