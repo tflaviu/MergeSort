@@ -2,6 +2,20 @@
 	<head>
 	</head>
 	<body>
+		<p id='sort-array'></p>
+		<style>
+		.left {
+		  background-color: #6bf442;
+		}
+
+		.right {
+		  background-color: #14ffd3;
+		}
+
+		.mid {
+		  background-color: #fff314;
+		}
+		</style>
 		<script>
 			function binarySearch(arr, nr) {
 			  setTimeout(function() {
@@ -16,7 +30,7 @@
 					span.setAttribute("class", "left");
 				  } else if (i > mid) {
 					span.setAttribute("class", "right");
-				  }
+	git s			  }
 				  span.innerHTML = arr[i] + " ";
 				  var p = document.querySelector('#sort-array');
 				  p.appendChild(span);
@@ -36,6 +50,13 @@
 				}
 			  }, 1000);
 			}
+			
+			arr = [10, 7, 100, 45, 200, 222, 110, 300, 400, 250, 524, 534, 6566, 35553, 9];
+			arr = arr.sort(function(a, b) {
+			  return a - b;
+			});
+
+			var result = binarySearch(arr, 7);
 		</script>
 	</body>
 </html>
