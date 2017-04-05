@@ -1,1 +1,41 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			function binarySearch(arr, nr) {
+			  setTimeout(function() {
+				var mid = Math.floor(arr.length / 2);
+				var br = document.createElement("br");
 
+				for (var i = 0; i < arr.length; i++) {
+				  var span = document.createElement('span');
+				  if (i == mid) {
+					span.setAttribute("class", "mid");
+				  } else if (i < mid) {
+					span.setAttribute("class", "left");
+				  } else if (i > mid) {
+					span.setAttribute("class", "right");
+				  }
+				  span.innerHTML = arr[i] + " ";
+				  var p = document.querySelector('#sort-array');
+				  p.appendChild(span);
+				}
+				p.appendChild(br);
+
+				if (arr[mid] === nr) {
+				  document.querySelector('#sort-array').innerHTML += arr[mid];
+				  return arr[mid];
+				} else if (arr[mid] < nr && arr.length > 1) {
+				  return binarySearch(arr.splice(mid, Number.MAX_VALUE), nr);
+				} else if (arr[mid] > nr && arr.length > 1) {
+				  return binarySearch(arr.splice(0, mid), nr);
+				} else {
+				  document.querySelector('#sort-array').innerHTML += "Nu s-a gasit valoarea";
+				  return "Nu s-a gasit valoarea";
+				}
+			  }, 1000);
+			}
+		</script>
+	</body>
+</html>
